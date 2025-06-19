@@ -1825,7 +1825,11 @@ IntNative main ( IntNative argc, Char *argv[] )
    copyFileName ( inName,  (Char*)"(none)" );
    copyFileName ( outName, (Char*)"(none)" );
 
-   copyFileName ( progNameReally, argv[0] );
+   if (argc >= 1 && argv[0] != NULL)
+      copyFileName ( progNameReally, argv[0] );
+   else
+      copyFileName ( progNameReally, (Char*)"bzip2" );
+
    progName = &progNameReally[0];
    for (tmp = &progNameReally[0]; *tmp != '\0'; tmp++)
       if (*tmp == PATH_SEP) progName = tmp + 1;
