@@ -92,14 +92,14 @@ install: bzip2 bzip2recover
 	chmod a+r ${DESTDIR}${prefix}/include/bzlib.h
 	cp -f libbz2.a ${DESTDIR}${prefix}/lib
 	chmod a+r ${DESTDIR}${prefix}/lib/libbz2.a
-	cp -f bzgrep ${DESTDIR}${prefix}/bin/bzgrep
+	cp -f ${srcdir}/bzgrep ${DESTDIR}${prefix}/bin/bzgrep
 	ln -s -f ${DESTDIR}${prefix}/bin/bzgrep ${DESTDIR}${prefix}/bin/bzegrep
 	ln -s -f ${DESTDIR}${prefix}/bin/bzgrep ${DESTDIR}${prefix}/bin/bzfgrep
 	chmod a+x ${DESTDIR}${prefix}/bin/bzgrep
-	cp -f bzmore ${DESTDIR}${prefix}/bin/bzmore
+	cp -f ${srcdir}/bzmore ${DESTDIR}${prefix}/bin/bzmore
 	ln -s -f ${DESTDIR}${prefix}/bin/bzmore ${DESTDIR}${prefix}/bin/bzless
 	chmod a+x ${DESTDIR}${prefix}/bin/bzmore
-	cp -f bzdiff ${DESTDIR}${prefix}/bin/bzdiff
+	cp -f ${srcdir}/bzdiff ${DESTDIR}${prefix}/bin/bzdiff
 	ln -s -f ${DESTDIR}${prefix}/bin/bzdiff ${DESTDIR}${prefix}/bin/bzcmp
 	chmod a+x ${DESTDIR}${prefix}/bin/bzdiff
 	cp -f ${srcdir}/bzgrep.1 ${srcdir}/bzmore.1 ${srcdir}/bzdiff.1 ${DESTDIR}${prefix}/man/man1
