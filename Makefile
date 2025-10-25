@@ -52,7 +52,7 @@ libbz2.a: ${OBJS}
 	rm -f libbz2.a
 	${AR} cq libbz2.a ${OBJS}
 	@if ( test -f ${RANLIB} -o -f /usr/bin/ranlib -o \
-		-f /bin/ranlib -o -f /usr/ccs/bin/ranlib } ; then \
+		-f /bin/ranlib -o -f /usr/ccs/bin/ranlib ) ; then \
 		echo ${RANLIB} libbz2.a ; \
 		${RANLIB} libbz2.a ; \
 	fi
@@ -75,11 +75,11 @@ test: bzip2
 	@cat ${srcdir}/words3
 
 install: bzip2 bzip2recover
-	if ( test ! -d ${DESTDIR}${prefix}/bin } ; then mkdir -p ${DESTDIR}${prefix}/bin ; fi
-	if ( test ! -d ${DESTDIR}${prefix}/lib } ; then mkdir -p ${DESTDIR}${prefix}/lib ; fi
-	if ( test ! -d ${DESTDIR}${prefix}/man } ; then mkdir -p ${DESTDIR}${prefix}/man ; fi
-	if ( test ! -d ${DESTDIR}${prefix}/man/man1 } ; then mkdir -p ${DESTDIR}${prefix}/man/man1 ; fi
-	if ( test ! -d ${DESTDIR}${prefix}/include } ; then mkdir -p ${DESTDIR}${prefix}/include ; fi
+	if ( test ! -d ${DESTDIR}${prefix}/bin ) ; then mkdir -p ${DESTDIR}${prefix}/bin ; fi
+	if ( test ! -d ${DESTDIR}${prefix}/lib ) ; then mkdir -p ${DESTDIR}${prefix}/lib ; fi
+	if ( test ! -d ${DESTDIR}${prefix}/man ) ; then mkdir -p ${DESTDIR}${prefix}/man ; fi
+	if ( test ! -d ${DESTDIR}${prefix}/man/man1 ) ; then mkdir -p ${DESTDIR}${prefix}/man/man1 ; fi
+	if ( test ! -d ${DESTDIR}${prefix}/include ) ; then mkdir -p ${DESTDIR}${prefix}/include ; fi
 	cp -f bzip2 ${DESTDIR}${prefix}/bin/bzip2
 	cp -f bzip2 ${DESTDIR}${prefix}/bin/bunzip2
 	cp -f bzip2 ${DESTDIR}${prefix}/bin/bzcat
