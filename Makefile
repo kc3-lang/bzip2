@@ -57,7 +57,7 @@ libbz2.a: $(OBJS)
 
 check: test
 test: bzip2
-	@cat words1
+	@cat ${srcdir}/words1
 	./bzip2 -1  < sample1.ref > sample1.rb2
 	./bzip2 -2  < sample2.ref > sample2.rb2
 	./bzip2 -3  < sample3.ref > sample3.rb2
@@ -70,7 +70,7 @@ test: bzip2
 	cmp sample1.tst sample1.ref
 	cmp sample2.tst sample2.ref
 	cmp sample3.tst sample3.ref
-	@cat words3
+	@cat ${srcdir}/words3
 
 install: bzip2 bzip2recover
 	if ( test ! -d ${DESTDIR}${prefix}/bin ) ; then mkdir -p ${DESTDIR}${prefix}/bin ; fi
@@ -117,7 +117,7 @@ clean:
 	sample1.tst sample2.tst sample3.tst
 
 blocksort.o: ${srcdir}/blocksort.c
-	@cat words0
+	@cat ${srcdir}/words0
 	$(CC) $(CFLAGS) -c ${srcdir}/blocksort.c
 huffman.o: ${srcdir}/huffman.c
 	$(CC) $(CFLAGS) -c ${srcdir}/huffman.c
