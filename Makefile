@@ -86,9 +86,9 @@ install: bzip2 bzip2recover
 	chmod a+x ${DESTDIR}${prefix}/bin/bunzip2
 	chmod a+x ${DESTDIR}${prefix}/bin/bzcat
 	chmod a+x ${DESTDIR}${prefix}/bin/bzip2recover
-	cp -f bzip2.1 ${DESTDIR}${prefix}/man/man1
+	cp -f ${srcdir}/bzip2.1 ${DESTDIR}${prefix}/man/man1
 	chmod a+r ${DESTDIR}${prefix}/man/man1/bzip2.1
-	cp -f bzlib.h ${DESTDIR}${prefix}/include
+	cp -f ${srcdir}/bzlib.h ${DESTDIR}${prefix}/include
 	chmod a+r ${DESTDIR}${prefix}/include/bzlib.h
 	cp -f libbz2.a ${DESTDIR}${prefix}/lib
 	chmod a+r ${DESTDIR}${prefix}/lib/libbz2.a
@@ -102,7 +102,7 @@ install: bzip2 bzip2recover
 	cp -f bzdiff ${DESTDIR}${prefix}/bin/bzdiff
 	ln -s -f ${DESTDIR}${prefix}/bin/bzdiff ${DESTDIR}${prefix}/bin/bzcmp
 	chmod a+x ${DESTDIR}${prefix}/bin/bzdiff
-	cp -f bzgrep.1 bzmore.1 bzdiff.1 ${DESTDIR}${prefix}/man/man1
+	cp -f ${srcdir}/bzgrep.1 ${srcdir}/bzmore.1 ${srcdir}/bzdiff.1 ${DESTDIR}${prefix}/man/man1
 	chmod a+r ${DESTDIR}${prefix}/man/man1/bzgrep.1
 	chmod a+r ${DESTDIR}${prefix}/man/man1/bzmore.1
 	chmod a+r ${DESTDIR}${prefix}/man/man1/bzdiff.1
