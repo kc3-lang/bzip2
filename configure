@@ -8,9 +8,15 @@ srcdir="$(cd "$(dirname "$0")" && pwd)"
 
 while [ $# -gt 0 ]; do
     case "$1" in
-        --prefix) PREFIX="$2"; shift 2;;
-        *) echo "unknown argument : $@"; exit 1
-    fi
+        --prefix)
+            PREFIX="$2"
+            shift 2
+            ;;
+        *)
+            echo "unknown argument : $@"
+            exit 1
+            ;;
+    esac
 done
 
 cp "${srcdir}/Makefile" ./
