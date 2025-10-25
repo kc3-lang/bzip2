@@ -1,5 +1,9 @@
 #!/bin/sh
 
+set -e
+
 echo "$0"
 
-cp "$(cd "$(dirname "$0")" && pwd)/Makefile" ./
+srcdir="$(cd "$(dirname "$0")" && pwd)"
+
+cp "${srcdir}/Makefile" ./
