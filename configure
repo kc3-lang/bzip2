@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "$0"
+
+cp "$(cd "$(dirname "$0")" && pwd)/Makefile" ./
