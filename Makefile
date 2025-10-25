@@ -36,7 +36,7 @@ OBJS= blocksort.o  \
       decompress.o \
       bzlib.o
 
-all: libbz2.a bzip2 bzip2recover test
+all: libbz2.a bzip2 bzip2recover
 
 include configure.mk
 
