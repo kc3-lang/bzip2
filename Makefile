@@ -38,6 +38,8 @@ OBJS= blocksort.o  \
 
 all: libbz2.a bzip2 bzip2recover test
 
+include configure.mk
+
 bzip2: libbz2.a bzip2.o
 	$(CC) $(CFLAGS) $(LDFLAGS) -o bzip2 bzip2.o -L. -lbz2
 
@@ -138,7 +140,7 @@ bzip2recover.o: ${srcdir}/bzip2recover.c
 distclean: clean
 	rm -f manual.ps manual.html manual.pdf bzip2.txt bzip2.1.preformatted
 
-DISTNAME=bzip2-1.0.8
+DISTNAME = bzip2-1.0.8
 dist: check manual
 	rm -f $(DISTNAME)
 	ln -s -f . $(DISTNAME)

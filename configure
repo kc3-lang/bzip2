@@ -7,3 +7,6 @@ echo "$0"
 srcdir="$(cd "$(dirname "$0")" && pwd)"
 
 cp "${srcdir}/Makefile" ./
+
+echo "## gen by configure" > configure.mk
+echo "srcdir = ${srcdir}" >> configure.mk
