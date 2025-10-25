@@ -6,10 +6,12 @@ echo "$0"
 
 srcdir="$(cd "$(dirname "$0")" && pwd)"
 
-if [ "x$1" = "x--prefix" ]; then
-    PREFIX="$2"
-    shift 2
-fi
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --prefix) PREFIX="$2"; shift 2;;
+        *) echo "unknown argument : $@"; exit 1
+    fi
+done
 
 cp "${srcdir}/Makefile" ./
 
